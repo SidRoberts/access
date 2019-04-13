@@ -5,7 +5,7 @@ Lightweight and simple access management system.
 
 
 
-[![Build Status](https://img.shields.io/travis/SidRoberts/access/master.svg?style=for-the-badge)](https://travis-ci.org/SidRoberts/access)
+[![Build Status](https://img.shields.io/travis/SidRoberts/access/1.0.x.svg?style=for-the-badge)](https://travis-ci.org/SidRoberts/access)
 [![GitHub release](https://img.shields.io/github/release/SidRoberts/access.svg?style=for-the-badge)]()
 
 [![License](https://img.shields.io/github/license/SidRoberts/access.svg?style=for-the-badge)]()
@@ -22,7 +22,7 @@ Install using Composer:
 ```json
 {
     "require": {
-        "sidroberts/access": "dev-master"
+        "sidroberts/access": "~1.0"
     }
 }
 ```
