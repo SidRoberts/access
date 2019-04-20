@@ -1,74 +1,73 @@
 <?php
 
-namespace Sid\Access\Tests\Unit;
+namespace Tests;
 
-use Codeception\TestCase\Test;
 use Sid\Access\Access;
 
-class AccessTest extends Test
+class AccessCest
 {
-    public function testNoDefault()
+    public function noDefault(UnitTester $I)
     {
         $access = new Access();
 
-        $this->assertTrue(
+        $I->assertTrue(
             $access->isAllowed("role", "component")
         );
 
         $access->deny("role", "component");
 
-        $this->assertFalse(
+        $I->assertFalse(
             $access->isAllowed("role", "component")
         );
 
         $access->allow("role", "component");
 
-        $this->assertTrue(
+        $I->assertTrue(
             $access->isAllowed("role", "component")
         );
     }
 
-    public function testNoDefaultRemove()
+    public function noDefaultRemove(UnitTester $I)
     {
         $access = new Access();
 
         $access->deny("role", "component");
 
-        $this->assertFalse(
+        $I->assertFalse(
             $access->isAllowed("role", "component")
         );
 
         $access->remove("role", "component");
 
-        $this->assertTrue(
+        $I->assertTrue(
             $access->isAllowed("role", "component")
         );
     }
 
-    public function testDefaultAllow()
+    public function defaultAllow(UnitTester $I)
     {
         $access = new Access(
             Access::ALLOW
         );
 
-        $this->assertTrue(
+        $I->assertTrue(
             $access->isAllowed("role", "component")
         );
 
         $access->deny("role", "component");
 
-        $this->assertFalse(
+        $I->assertFalse(
             $access->isAllowed("role", "component")
         );
 
         $access->allow("role", "component");
 
-        $this->assertTrue(
+        $I->assertTrue(
             $access->isAllowed("role", "component")
         );
     }
 
-    public function testDefaultAllowRemove()
+    public function defaultAllowRemove(UnitTester $I)
     {
         $access = new Access(
             Access::ALLOW
@@ -76,41 +75,41 @@ class AccessTest extends Test
 
         $access->deny("role", "component");
 
-        $this->assertFalse(
+        $I->assertFalse(
             $access->isAllowed("role", "component")
         );
 
         $access->remove("role", "component");
 
-        $this->assertTrue(
+        $I->assertTrue(
             $access->isAllowed("role", "component")
         );
     }
 
-    public function testDefaultDeny()
+    public function defaultDeny(UnitTester $I)
     {
         $access = new Access(
             Access::DENY
         );
 
-        $this->assertFalse(
+        $I->assertFalse(
             $access->isAllowed("role", "component")
         );
 
         $access->allow("role", "component");
 
-        $this->assertTrue(
+        $I->assertTrue(
             $access->isAllowed("role", "component")
         );
 
         $access->deny("role", "component");
 
-        $this->assertFalse(
+        $I->assertFalse(
             $access->isAllowed("role", "component")
         );
     }
 
-    public function testDefaultDenyRemove()
+    public function defaultDenyRemove(UnitTester $I)
     {
         $access = new Access(
             Access::DENY
@@ -118,13 +117,13 @@ class AccessTest extends Test
 
         $access->allow("role", "component");
 
-        $this->assertTrue(
+        $I->assertTrue(
             $access->isAllowed("role", "component")
         );
 
         $access->remove("role", "component");
 
-        $this->assertFalse(
+        $I->assertFalse(
             $access->isAllowed("role", "component")
         );
     }
