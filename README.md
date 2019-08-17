@@ -1,5 +1,4 @@
-Sid\Access
-==========
+# `Sid\Access`
 
 Lightweight and simple access management system.
 
@@ -15,7 +14,7 @@ Lightweight and simple access management system.
 
 
 
-## Installing ##
+## Installing
 
 Install using Composer:
 
