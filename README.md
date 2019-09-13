@@ -16,12 +16,8 @@ Lightweight and simple access management system.
 
 Install using Composer:
 
-```json
-{
-    "require": {
-        "sidroberts/access": "~1.0"
-    }
-}
+```bash
+composer require sidroberts/access
 ```
 
 
